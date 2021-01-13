@@ -11,6 +11,11 @@
 		92127AD525AD83EB00460719 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92127AD425AD83EB00460719 /* ContentView.swift */; };
 		92127AD725AD83ED00460719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92127AD625AD83ED00460719 /* Assets.xcassets */; };
 		92127ADA25AD83ED00460719 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92127AD925AD83ED00460719 /* Preview Assets.xcassets */; };
+		92127AE425AD840600460719 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92127AE225AD840600460719 /* Main.xcdatamodeld */; };
+		92127AE725AD887E00460719 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92127AE625AD887E00460719 /* DataController.swift */; };
+		92127AEE25ADC75F00460719 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92127AED25ADC75F00460719 /* HomeView.swift */; };
+		92E97A7F25ADE5C200355CCF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E97A7E25ADE5C200355CCF /* CloudKit.framework */; };
+		92E97A8225ADE6FF00355CCF /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E97A8125ADE6FF00355CCF /* ProjectsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,12 @@
 		92127AD625AD83ED00460719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92127AD925AD83ED00460719 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92127ADB25AD83ED00460719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92127AE325AD840600460719 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		92127AE625AD887E00460719 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		92127AED25ADC75F00460719 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92E97A7C25ADE56C00355CCF /* ActivityObserver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityObserver.entitlements; sourceTree = "<group>"; };
+		92E97A7E25ADE5C200355CCF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		92E97A8125ADE6FF00355CCF /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E97A7F25ADE5C200355CCF /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +50,7 @@
 			children = (
 				92127AD125AD83EB00460719 /* ActivityObserver */,
 				92127AD025AD83EB00460719 /* Products */,
+				92E97A7D25ADE5C200355CCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +65,16 @@
 		92127AD125AD83EB00460719 /* ActivityObserver */ = {
 			isa = PBXGroup;
 			children = (
+				92E97A7C25ADE56C00355CCF /* ActivityObserver.entitlements */,
 				92127AD225AD83EB00460719 /* ActivityObserverApp.swift */,
 				92127AD425AD83EB00460719 /* ContentView.swift */,
+				92127AE625AD887E00460719 /* DataController.swift */,
 				92127AD625AD83ED00460719 /* Assets.xcassets */,
+				92E97A8125ADE6FF00355CCF /* ProjectsView.swift */,
+				92127AED25ADC75F00460719 /* HomeView.swift */,
 				92127ADB25AD83ED00460719 /* Info.plist */,
 				92127AD825AD83ED00460719 /* Preview Content */,
+				92127AE225AD840600460719 /* Main.xcdatamodeld */,
 			);
 			path = ActivityObserver;
 			sourceTree = "<group>";
@@ -67,6 +85,14 @@
 				92127AD925AD83ED00460719 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		92E97A7D25ADE5C200355CCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92E97A7E25ADE5C200355CCF /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E97A8225ADE6FF00355CCF /* ProjectsView.swift in Sources */,
+				92127AE425AD840600460719 /* Main.xcdatamodeld in Sources */,
+				92127AE725AD887E00460719 /* DataController.swift in Sources */,
 				92127AD525AD83EB00460719 /* ContentView.swift in Sources */,
+				92127AEE25ADC75F00460719 /* HomeView.swift in Sources */,
 				92127AD325AD83EB00460719 /* ActivityObserverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ActivityObserver/ActivityObserver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ActivityObserver/Preview Content\"";
 				DEVELOPMENT_TEAM = VV3HM9845R;
@@ -289,6 +320,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ActivityObserver/ActivityObserver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ActivityObserver/Preview Content\"";
 				DEVELOPMENT_TEAM = VV3HM9845R;
@@ -328,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92127AE225AD840600460719 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92127AE325AD840600460719 /* Main.xcdatamodel */,
+			);
+			currentVersion = 92127AE325AD840600460719 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 92127AC725AD83EB00460719 /* Project object */;
 }
