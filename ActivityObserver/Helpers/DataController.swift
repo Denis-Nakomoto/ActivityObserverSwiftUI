@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-class DataCotroller: ObservableObject {
+class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
     init(inMemory: Bool = false) {
@@ -25,8 +25,8 @@ class DataCotroller: ObservableObject {
         }
     }
     
-    static var preview: DataCotroller = {
-        let dataController = DataCotroller(inMemory: true)
+    static var preview: DataController = {
+        let dataController = DataController(inMemory: true)
         let viewContext = dataController.container.viewContext
         
         do {
@@ -51,7 +51,7 @@ class DataCotroller: ObservableObject {
                 let item = Item(context: viewContext)
                 item.title = "Item \(j)"
                 item.completed = Bool.random()
-                item.creationData = Date()
+                item.creationDate = Date()
                 item.project = project
                 item.priority = Int16.random(in: 1...3)
             }

@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @SceneStorage("selectedViews") var selectedView: String?
+    
     var body: some View {
-        TabView{
+        TabView (selection: $selectedView){
             HomeView()
-                .tabItem {
+                .tag(HomeView.tag)
+                .tabItem
+                {
                     Image(systemName: "house")
                     Text("Home")
                 }
             ProjectsView(showClosedProjects: false)
+                .tag(ProjectsView.openTag)
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Open")
                 }
             ProjectsView(showClosedProjects: true)
+                .tag(ProjectsView.closedTag)
                 .tabItem {
                     Image(systemName: "checkmark")
                     Text("Closed")
@@ -30,7 +36,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var dataController = DataCotroller.preview
+    static var dataController = DataController.preview
     static var previews: some View {
         ContentView()
             .environment(\.managedObjectContext, dataController.container.viewContext)

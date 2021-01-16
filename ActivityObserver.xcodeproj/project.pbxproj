@@ -14,6 +14,14 @@
 		92127AE425AD840600460719 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92127AE225AD840600460719 /* Main.xcdatamodeld */; };
 		92127AE725AD887E00460719 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92127AE625AD887E00460719 /* DataController.swift */; };
 		92127AEE25ADC75F00460719 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92127AED25ADC75F00460719 /* HomeView.swift */; };
+		922468C225B08C380089278E /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922468C125B08C380089278E /* EditItemView.swift */; };
+		922468C525B095880089278E /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922468C425B095880089278E /* ItemRowView.swift */; };
+		923AF1B925AF26C70095A76E /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AF1B825AF26C70095A76E /* Item-CoreDataHelpers.swift */; };
+		923AF1BC25AF2A150095A76E /* Project-CoreDataHepers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AF1BB25AF2A150095A76E /* Project-CoreDataHepers.swift */; };
+		928870C625B1541700FC559E /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928870C525B1541700FC559E /* Binding-OnChange.swift */; };
+		928870C925B1B9EF00FC559E /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928870C825B1B9EF00FC559E /* ProjectHeaderView.swift */; };
+		928870CC25B1C60900FC559E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928870CB25B1C60900FC559E /* Colors.xcassets */; };
+		928870CF25B1D4C800FC559E /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928870CE25B1D4C800FC559E /* EditProjectView.swift */; };
 		92E97A7F25ADE5C200355CCF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E97A7E25ADE5C200355CCF /* CloudKit.framework */; };
 		92E97A8225ADE6FF00355CCF /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E97A8125ADE6FF00355CCF /* ProjectsView.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +36,14 @@
 		92127AE325AD840600460719 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		92127AE625AD887E00460719 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		92127AED25ADC75F00460719 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		922468C125B08C380089278E /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		922468C425B095880089278E /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
+		923AF1B825AF26C70095A76E /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		923AF1BB25AF2A150095A76E /* Project-CoreDataHepers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHepers.swift"; sourceTree = "<group>"; };
+		928870C525B1541700FC559E /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
+		928870C825B1B9EF00FC559E /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
+		928870CB25B1C60900FC559E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		928870CE25B1D4C800FC559E /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		92E97A7C25ADE56C00355CCF /* ActivityObserver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityObserver.entitlements; sourceTree = "<group>"; };
 		92E97A7E25ADE5C200355CCF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		92E97A8125ADE6FF00355CCF /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
@@ -45,6 +61,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9204C20725B2F8A300FBC452 /*  CoreDataHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				923AF1B825AF26C70095A76E /* Item-CoreDataHelpers.swift */,
+				923AF1BB25AF2A150095A76E /* Project-CoreDataHepers.swift */,
+			);
+			path = " CoreDataHelpers";
+			sourceTree = "<group>";
+		};
+		9204C20925B2F8D900FBC452 /* ItemsViews */ = {
+			isa = PBXGroup;
+			children = (
+				922468C125B08C380089278E /* EditItemView.swift */,
+				922468C425B095880089278E /* ItemRowView.swift */,
+			);
+			path = ItemsViews;
+			sourceTree = "<group>";
+		};
+		9204C20B25B2F92200FBC452 /* ProjectsView */ = {
+			isa = PBXGroup;
+			children = (
+				928870CE25B1D4C800FC559E /* EditProjectView.swift */,
+				928870C825B1B9EF00FC559E /* ProjectHeaderView.swift */,
+				92E97A8125ADE6FF00355CCF /* ProjectsView.swift */,
+			);
+			path = ProjectsView;
+			sourceTree = "<group>";
+		};
+		9204C20E25B2FA5300FBC452 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				928870C525B1541700FC559E /* Binding-OnChange.swift */,
+				92127AE625AD887E00460719 /* DataController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		92127AC625AD83EB00460719 = {
 			isa = PBXGroup;
 			children = (
@@ -66,12 +119,15 @@
 			isa = PBXGroup;
 			children = (
 				92E97A7C25ADE56C00355CCF /* ActivityObserver.entitlements */,
+				9204C20925B2F8D900FBC452 /* ItemsViews */,
+				9204C20725B2F8A300FBC452 /*  CoreDataHelpers */,
+				9204C20B25B2F92200FBC452 /* ProjectsView */,
+				9204C20E25B2FA5300FBC452 /* Helpers */,
 				92127AD225AD83EB00460719 /* ActivityObserverApp.swift */,
 				92127AD425AD83EB00460719 /* ContentView.swift */,
-				92127AE625AD887E00460719 /* DataController.swift */,
-				92127AD625AD83ED00460719 /* Assets.xcassets */,
-				92E97A8125ADE6FF00355CCF /* ProjectsView.swift */,
 				92127AED25ADC75F00460719 /* HomeView.swift */,
+				928870CB25B1C60900FC559E /* Colors.xcassets */,
+				92127AD625AD83ED00460719 /* Assets.xcassets */,
 				92127ADB25AD83ED00460719 /* Info.plist */,
 				92127AD825AD83ED00460719 /* Preview Content */,
 				92127AE225AD840600460719 /* Main.xcdatamodeld */,
@@ -152,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928870CC25B1C60900FC559E /* Colors.xcassets in Resources */,
 				92127ADA25AD83ED00460719 /* Preview Assets.xcassets in Resources */,
 				92127AD725AD83ED00460719 /* Assets.xcassets in Resources */,
 			);
@@ -165,11 +222,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E97A8225ADE6FF00355CCF /* ProjectsView.swift in Sources */,
+				928870C925B1B9EF00FC559E /* ProjectHeaderView.swift in Sources */,
 				92127AE425AD840600460719 /* Main.xcdatamodeld in Sources */,
 				92127AE725AD887E00460719 /* DataController.swift in Sources */,
+				928870CF25B1D4C800FC559E /* EditProjectView.swift in Sources */,
+				923AF1BC25AF2A150095A76E /* Project-CoreDataHepers.swift in Sources */,
+				922468C525B095880089278E /* ItemRowView.swift in Sources */,
 				92127AD525AD83EB00460719 /* ContentView.swift in Sources */,
+				928870C625B1541700FC559E /* Binding-OnChange.swift in Sources */,
 				92127AEE25ADC75F00460719 /* HomeView.swift in Sources */,
 				92127AD325AD83EB00460719 /* ActivityObserverApp.swift in Sources */,
+				923AF1B925AF26C70095A76E /* Item-CoreDataHelpers.swift in Sources */,
+				922468C225B08C380089278E /* EditItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
