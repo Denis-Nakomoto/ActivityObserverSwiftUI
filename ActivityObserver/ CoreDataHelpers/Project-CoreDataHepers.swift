@@ -64,4 +64,15 @@ extension Project {
         project.creationDate = Date()
         return project
     }
+    
+    func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
+        switch sortOrder {
+        case .title:
+            return projectItems.sorted {$0.itemTitle < $1.itemTitle}
+        case .creationDate:
+            return projectItems.sorted{$0.itemCreationDate < $1.itemCreationDate}
+        case .optimized:
+            return projectItemsDefaultSorted
+        }
+    }
 }
