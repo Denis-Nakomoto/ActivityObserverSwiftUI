@@ -9,69 +9,66 @@ import CoreData
 import SwiftUI
 
 struct HomeView: View {
-    
+
     static let tag: String? = "Home"
-    
+
     @EnvironmentObject var dataController: DataController
-    
-    @FetchRequest(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)], predicate: NSPredicate(format: "closed = false")) var projects: FetchedResults<Project>
-    
+
+    @FetchRequest(entity: Project.entity(),
+                  sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)],
+                  predicate: NSPredicate(format: "closed = false")) var projects: FetchedResults<Project>
+
     var projectRows: [GridItem] {
         [GridItem(.fixed(100))]
     }
-    
+
     let items: FetchRequest<Item>
-    
+
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        request.predicate = NSPredicate(format: "completed = false")
+
+        let completedPredicate = NSPredicate(format: "completed = false")
+        let openPredicate = NSPredicate(format: "project.closed = false")
+        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
+        request.predicate = compoundPredicate
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \Item.priority, ascending: false)
         ]
         request.fetchLimit = 10
         items = FetchRequest(fetchRequest: request)
     }
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHGrid (rows: projectRows) {
-                            ForEach(projects) { project in
-                                VStack(alignment: .leading) {
-                                    Text("\(project.projectItems.count) itmes")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                    
-                                    Text((project.projectTitle))
-                                        .font(.caption2)
-                                        
-                                    ProgressView(value: project.completionAmount)
-                                        .accentColor(Color(project.projectColor))
-                                }
-                                .padding()
-                                .background(Color.secondarySystemGroupedBackground)
-                                .cornerRadius(10)
-                                .shadow(color: Color.black.opacity(0.2), radius: 5)
-                            }
+                        LazyHGrid(rows: projectRows) {
+                            ForEach(projects, content: ProjectSummaryView.init)
                         }
                         .padding([.horizontal, .top])
                         .fixedSize(horizontal: false, vertical: true)
                     }
-                    VStack {
-                        list("Up next", for: items.wrappedValue.prefix(3))
-                        list("More to explore", for: items.wrappedValue.dropFirst(3))
+                    VStack(alignment: .leading) {
+                        ItemListView(title: "Up next", items: items.wrappedValue.prefix(3))
+                        ItemListView(title: "More to explore", items: items.wrappedValue.dropFirst(3))
                     }
                     .padding(.horizontal)
+
                 }
             }
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             .navigationTitle("Home")
+            .toolbar {
+                Button("Add data") {
+                    dataController.deleteAll()
+                    try? dataController.createSampleData()
+                }
+            }
         }
     }
-    
-    @ViewBuilder func list(_ title: String, for items: FetchedResults<Item>.SubSequence) -> some View {
+
+    @ViewBuilder func list(_ title: LocalizedStringKey, for items: FetchedResults<Item>.SubSequence) -> some View {
         if items.isEmpty {
             EmptyView()
         } else {
@@ -85,7 +82,7 @@ struct HomeView: View {
                         Circle()
                             .stroke(Color(item.project?.projectColor ?? "Light blue"), lineWidth: 3)
                             .frame(width: 44, height: 44)
-                        
+
                         VStack(alignment: .leading) {
                             Text(item.itemTitle)
                                 .font(.title2)
@@ -106,12 +103,6 @@ struct HomeView: View {
         }
     }
 }
-
-
-//Button ("Add data"){
-//    dataController.deleteAll()
-//    try? dataController.createSampleData()
-//}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

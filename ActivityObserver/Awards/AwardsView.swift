@@ -9,16 +9,16 @@ import SwiftUI
 
 struct AwardsView: View {
     static let tag: String? = "Awards"
-    
+
     @State var selectedAward = Award.example
     @State var showAwardDetails = false
-    
+
     @EnvironmentObject var dataController: DataController
-    
+
     var columns: [GridItem] {
         [GridItem(.adaptive(minimum: 100, maximum: 100))]
     }
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -33,8 +33,12 @@ struct AwardsView: View {
                                 .scaledToFit()
                                 .padding()
                                 .frame(width: 100, height: 100)
-                                .foregroundColor(dataController.hasEarned(award: award) ? Color(award.color) :  (Color.secondary.opacity(0.5)))
+                                .foregroundColor(dataController.hasEarned(award: award) ?
+                                                    Color(award.color) :  (Color.secondary.opacity(0.5)))
                         }
+                        .accessibilityLabel(Text(dataController.hasEarned(award: award) ?
+                                                    "Unlocked: \(award.name)" : "Locked"))
+                        .accessibilityHint(Text(award.description))
                     }
                 }
             }
@@ -42,9 +46,13 @@ struct AwardsView: View {
         }
         .alert(isPresented: $showAwardDetails) {
             if dataController.hasEarned(award: selectedAward) {
-                return Alert(title: Text("Unlocked \(selectedAward.name)"), message: Text(selectedAward.description), dismissButton: .default(Text("OK")))
+                return Alert(title: Text("Unlocked: \(selectedAward.name)"),
+                             message: Text(selectedAward.description),
+                             dismissButton: .default(Text("OK")))
             } else {
-                return Alert(title: Text("Locked"), message: Text(selectedAward.description), dismissButton: .default(Text("OK")))
+                return Alert(title: Text("Locked"),
+                             message: Text(selectedAward.description),
+                             dismissButton: .default(Text("OK")))
             }
         }
     }

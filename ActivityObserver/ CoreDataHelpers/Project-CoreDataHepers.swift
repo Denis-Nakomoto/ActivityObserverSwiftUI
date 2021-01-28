@@ -5,28 +5,37 @@
 //  Created by Denis Svetlakov on 13.01.2021.
 //
 
-import Foundation
+import SwiftUI
 
 extension Project {
-    
-    static let colors = ["Pink", "Purple", "Red", "Orange", "Gold", "Green", "Teal", "Light Blue", "Dark Blue", "Midnight", "Dark Gray", "Gray"]
-    
+
+    static let colors = [
+        "Pink", "Purple", "Red", "Orange", "Gold",
+        "Green", "Teal", "Light Blue", "Dark Blue",
+        "Midnight", "Dark Gray", "Gray"
+    ]
+
     var projectTitle: String {
-        title ?? ""
+        title ?? NSLocalizedString("New project", comment: "Create a new project")
     }
-    
+
     var projectDetails: String {
         details ?? ""
     }
-    
+
+    var label: LocalizedStringKey {
+        // swiftlint:disable:next line_length
+        LocalizedStringKey("\(projectTitle), \(projectItems.count) items,\(completionAmount * 100, specifier: "%g")% complete")
+    }
+
     var projectColor: String {
         color ?? "Light Blue"
     }
-    
-    var projectItems : [Item] {
+
+    var projectItems: [Item] {
         items?.allObjects as? [Item] ?? []
     }
-    
+
     var projectItemsDefaultSorted: [Item] {
         projectItems.sorted { first, second in
             if first.completed == false {
@@ -46,14 +55,14 @@ extension Project {
             return first.itemCreationDate < second.itemCreationDate
         }
     }
-    
+
     var completionAmount: Double {
         let originalItems = items?.allObjects as? [Item] ?? []
         guard originalItems.isEmpty == false else { return 0 }
         let completedItems = originalItems.filter(\.completed)
         return Double(completedItems.count) / Double(originalItems.count)
     }
-    
+
     static var example: Project {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
@@ -64,13 +73,13 @@ extension Project {
         project.creationDate = Date()
         return project
     }
-    
+
     func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
         switch sortOrder {
         case .title:
             return projectItems.sorted {$0.itemTitle < $1.itemTitle}
         case .creationDate:
-            return projectItems.sorted{$0.itemCreationDate < $1.itemCreationDate}
+            return projectItems.sorted {$0.itemCreationDate < $1.itemCreationDate}
         case .optimized:
             return projectItemsDefaultSorted
         }

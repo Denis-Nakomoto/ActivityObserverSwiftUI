@@ -7,6 +7,8 @@
 
 import Foundation
 
+// swiftlint:disable line_length
+
 extension Bundle {
 
     func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
@@ -21,7 +23,7 @@ extension Bundle {
         decoder.keyDecodingStrategy = keyDecodingStrategy
         do {
             return try decoder.decode(T.self, from: data)
-        } catch DecodingError.keyNotFound(let key, let context){
+        } catch DecodingError.keyNotFound(let key, let context) {
             fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' - \(context.debugDescription)")
         } catch DecodingError.typeMismatch(_, let context) {
             fatalError("Failed to decode \(file) from bundle due to type mismatch - \(context.debugDescription)")

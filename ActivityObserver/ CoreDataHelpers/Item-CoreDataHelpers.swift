@@ -8,23 +8,22 @@
 import Foundation
 
 extension Item {
-    
     enum SortOrder {
     case optimized, title, creationDate
     }
-    
+
     var itemTitle: String {
-        title ?? "New item"
+        title ?? NSLocalizedString("New item", comment: "Create a new item")
     }
-    
+
     var itemDetail: String {
         detail ?? ""
     }
-    
+
     var itemCreationDate: Date {
         creationDate ?? Date()
     }
-    
+
     static var example: Item {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

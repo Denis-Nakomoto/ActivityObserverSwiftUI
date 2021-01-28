@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct ActivityObserverApp: App {
-    
+
     @StateObject var dataController: DataController
-    
+
     init() {
         let dataController = DataController()
         _dataController = StateObject(wrappedValue: dataController)
@@ -25,7 +25,7 @@ struct ActivityObserverApp: App {
                            perform: save)
         }
     }
-    
+
     func save(_ note: Notification) {
         dataController.save()
     }
