@@ -84,59 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9204C20725B2F8A300FBC452 /*  CoreDataHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				923AF1B825AF26C70095A76E /* Item-CoreDataHelpers.swift */,
-				923AF1BB25AF2A150095A76E /* Project-CoreDataHepers.swift */,
-			);
-			path = " CoreDataHelpers";
-			sourceTree = "<group>";
-		};
-		9204C20925B2F8D900FBC452 /* ItemsViews */ = {
-			isa = PBXGroup;
-			children = (
-				922468C125B08C380089278E /* EditItemView.swift */,
-				9204C25125B9A0B600FBC452 /* ItemListView.swift */,
-				922468C425B095880089278E /* ItemRowView.swift */,
-			);
-			path = ItemsViews;
-			sourceTree = "<group>";
-		};
-		9204C20B25B2F92200FBC452 /* ProjectsView */ = {
-			isa = PBXGroup;
-			children = (
-				92E97A8125ADE6FF00355CCF /* ProjectsView.swift */,
-				928870C825B1B9EF00FC559E /* ProjectHeaderView.swift */,
-				928870CE25B1D4C800FC559E /* EditProjectView.swift */,
-			);
-			path = ProjectsView;
-			sourceTree = "<group>";
-		};
-		9204C20E25B2FA5300FBC452 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				92127AE625AD887E00460719 /* DataController.swift */,
-				9204C22C25B6F5DD00FBC452 /* Color-Additions.swift */,
-				928870C525B1541700FC559E /* Binding-OnChange.swift */,
-				9204C21025B45F9000FBC452 /* SelectSomethingView.swift */,
-				9204C24125B8140800FBC452 /* Localizable.strings */,
-				9204C21425B4790B00FBC452 /* Bundle-Decodable.swift */,
-				9204C24C25B8511F00FBC452 /* Localizable.stringsdict */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		9204C22825B5A0A900FBC452 /* Awards */ = {
-			isa = PBXGroup;
-			children = (
-				9204C24625B834B100FBC452 /* Awards.json */,
-				9204C22225B59F2500FBC452 /* Award.swift */,
-				9204C22525B59FC300FBC452 /* AwardsView.swift */,
-			);
-			path = Awards;
-			sourceTree = "<group>";
-		};
 		92127AC625AD83EB00460719 = {
 			isa = PBXGroup;
 			children = (
@@ -157,21 +104,16 @@
 		92127AD125AD83EB00460719 /* ActivityObserver */ = {
 			isa = PBXGroup;
 			children = (
-				92E97A7C25ADE56C00355CCF /* ActivityObserver.entitlements */,
-				9204C20925B2F8D900FBC452 /* ItemsViews */,
-				9204C20725B2F8A300FBC452 /*  CoreDataHelpers */,
-				9204C20B25B2F92200FBC452 /* ProjectsView */,
-				9204C22825B5A0A900FBC452 /* Awards */,
-				9204C20E25B2FA5300FBC452 /* Helpers */,
+				924A650B25C43BD50081392E /* Activities */,
+				924A650625C438DC0081392E /* Localization */,
+				924A650525C438CE0081392E /* Configuration */,
+				924A650425C438C60081392E /* Extensions */,
 				92127AD225AD83EB00460719 /* ActivityObserverApp.swift */,
 				92127AD425AD83EB00460719 /* ContentView.swift */,
-				9204C25425B9A21300FBC452 /* ProjectSummaryView.swift */,
-				92127AED25ADC75F00460719 /* HomeView.swift */,
+				92127AE625AD887E00460719 /* DataController.swift */,
 				928870CB25B1C60900FC559E /* Colors.xcassets */,
 				92127AD625AD83ED00460719 /* Assets.xcassets */,
-				92127ADB25AD83ED00460719 /* Info.plist */,
 				92127AD825AD83ED00460719 /* Preview Content */,
-				92127AE225AD840600460719 /* Main.xcdatamodeld */,
 			);
 			path = ActivityObserver;
 			sourceTree = "<group>";
@@ -182,6 +124,80 @@
 				92127AD925AD83ED00460719 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		924A650425C438C60081392E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				928870C525B1541700FC559E /* Binding-OnChange.swift */,
+				9204C21425B4790B00FBC452 /* Bundle-Decodable.swift */,
+				9204C22C25B6F5DD00FBC452 /* Color-Additions.swift */,
+				923AF1B825AF26C70095A76E /* Item-CoreDataHelpers.swift */,
+				923AF1BB25AF2A150095A76E /* Project-CoreDataHepers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		924A650525C438CE0081392E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				92127AE225AD840600460719 /* Main.xcdatamodeld */,
+				92E97A7C25ADE56C00355CCF /* ActivityObserver.entitlements */,
+				92127ADB25AD83ED00460719 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		924A650625C438DC0081392E /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				9204C24C25B8511F00FBC452 /* Localizable.stringsdict */,
+				9204C24125B8140800FBC452 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		924A650B25C43BD50081392E /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				924A650E25C43BF90081392E /* Projects */,
+				924A650D25C43BEF0081392E /* Awards */,
+				924A650C25C43BE80081392E /* Home */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		924A650C25C43BE80081392E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9204C25125B9A0B600FBC452 /* ItemListView.swift */,
+				9204C25425B9A21300FBC452 /* ProjectSummaryView.swift */,
+				92127AED25ADC75F00460719 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		924A650D25C43BEF0081392E /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+				9204C22225B59F2500FBC452 /* Award.swift */,
+				9204C24625B834B100FBC452 /* Awards.json */,
+				9204C22525B59FC300FBC452 /* AwardsView.swift */,
+			);
+			path = Awards;
+			sourceTree = "<group>";
+		};
+		924A650E25C43BF90081392E /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				922468C125B08C380089278E /* EditItemView.swift */,
+				928870CE25B1D4C800FC559E /* EditProjectView.swift */,
+				922468C425B095880089278E /* ItemRowView.swift */,
+				928870C825B1B9EF00FC559E /* ProjectHeaderView.swift */,
+				92E97A8125ADE6FF00355CCF /* ProjectsView.swift */,
+				9204C21025B45F9000FBC452 /* SelectSomethingView.swift */,
+			);
+			path = Projects;
 			sourceTree = "<group>";
 		};
 		92E97A7D25ADE5C200355CCF /* Frameworks */ = {
@@ -202,7 +218,7 @@
 				92127ACB25AD83EB00460719 /* Sources */,
 				92127ACC25AD83EB00460719 /* Frameworks */,
 				92127ACD25AD83EB00460719 /* Resources */,
-				92189AC125BEFFAC00C8F62F /* SwiftTint */,
+				92189AC125BEFFAC00C8F62F /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -263,7 +279,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		92189AC125BEFFAC00C8F62F /* SwiftTint */ = {
+		92189AC125BEFFAC00C8F62F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,7 +288,7 @@
 			);
 			inputPaths = (
 			);
-			name = SwiftTint;
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -465,12 +481,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ActivityObserver/ActivityObserver.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ActivityObserver/Configuration/ActivityObserver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ActivityObserver/Preview Content\"";
 				DEVELOPMENT_TEAM = VV3HM9845R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ActivityObserver/Info.plist;
+				INFOPLIST_FILE = ActivityObserver/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,12 +504,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ActivityObserver/ActivityObserver.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ActivityObserver/Configuration/ActivityObserver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ActivityObserver/Preview Content\"";
 				DEVELOPMENT_TEAM = VV3HM9845R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ActivityObserver/Info.plist;
+				INFOPLIST_FILE = ActivityObserver/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
